@@ -1,0 +1,59 @@
+@model List<Entradas>
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Entradas</title>
+</head>
+<body>
+
+    <div class="header">
+    <a href='@Url.Action("Inicio", "Home")'>
+        <img src="/images/boca.jpg" alt="Boca Juniors" class="boca-image">
+    </a>
+    <h1>Conseguir Entradas</h1>
+    <div class="nav-links">
+        <a href='@Url.Action("Inicio", "Home")'>Inicio</a>
+        <a href='@Url.Action("Partidos", "Home")'>Partidos</a>
+        <a href='@Url.Action("Entradassoc", "Home")'>Entradas</a>
+        <a href='@Url.Action("Noticias", "Home")'>Noticias</a>
+    </div>
+</div>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID de la entrada</th>
+                <th>Precio</th>
+                <th>Asiento</th>
+                <th>Cantidad</th>
+                <th></th>  
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var entrada in ViewBag.ListaEntradas)
+            {
+                <tr>
+                    <td>@entrada.EntradaID</td>
+                    <td>@entrada.Precio</td>
+                    <td>@entrada.Asiento</td>
+                    <td>@entrada.Cantidad</td>
+                    
+                    <td>
+                        @{
+                            <form action='@Url.Action("ComprarEntradassoc")'>
+                            <input type="hidden" name="entradaid" value="@entrada.EntradaID">
+                            <input type="submit" >
+                            </form>
+                        } 
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+
+</body>
+</html>

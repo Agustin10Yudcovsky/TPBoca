@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Noticias del club</title>
+    <style>
+        .nav-links a {
+            color: #d1ab52;
+            margin-right: 10px;
+            text-decoration: none;
+        }
+
+        .article-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 20px;
+        }
+
+        .article {
+            width: 30%;
+            margin-bottom: 20px;
+            overflow: hidden;
+            position: relative;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .article:hover {
+            transform: scale(1.05);
+        }
+
+        .article img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 10px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .article:hover img {
+            transform: scale(1.2);
+        }
+
+        .article-content {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .article p {
+            color: #07358f;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <a href='@Url.Action("Inicio", "Home")'>
+            <img src="/images/boca.jpg" alt="Boca Juniors" class="boca-image">
+        </a>
+        <h1>Noticias del Club</h1>
+        <div class="nav-links">
+            <a href='@Url.Action("Inicio", "Home")'>Inicio</a>
+            <a href='@Url.Action("Partidos", "Home")'>Partidos</a>
+            <a href='@Url.Action("Entradas", "Home")'>Entradas</a>
+            <a href='@Url.Action("Noticias", "Home")'>Noticias</a>
+        </div>
+    </div>
+
+    <div class="article-container">
+        <div class="article">
+            <div class="article-content">
+                <img src="/images/diego.jpg" alt="Diego">
+                <p>¡Feliz Cumpleaños Diego!</p>
+                <p>Un día como hoy pero hace 63 años nacía la leyenda del fútbol mundial. El ausente más presente 1960-∞</p>
+            </div>
+        </div>
+        <div class="article">
+            <div class="article-content">
+                <img src="/images/predio.jpg" alt="Predio">
+                <p>¡Seguimos enfocados!</p>
+                <p>El plantel practica con normalidad desde #BocaPredio para seguir con nuestro camino.</p>
+            </div>
+        </div>
+        <div class="article">
+            <div class="article-content">
+                <img src="/images/mc.jpg" alt="mejor club">
+                <p>Tenemos el honor de informarles a todos los hinchas Xeneizes que Boca ha sido nominado como mejor club de fútbol del año en los premios Globe Soccer.</p>
+            </div>
+        </div>
+        <div class="article">
+            <div class="article-content">
+                <img src="/images/inferiores.jpg" alt="Inferiores">
+                <p>Juveniles 2023</p>
+                <p>Este 6 de Noviembre Boca se puso al día en las inferiores al completar los tres encuentros pendientes que tenía con sus categorías mayores ante Atlético Tucumán. Lo hizo de manera perfecta, con tres victorias en tres partidos. De esta manera, sumando lo que habían hecho los más chicos, en total el Xeneize sumó cuatro triunfos y sólo dos caídas ante el Decano.</p>
+            </div>
+        </div>
+        <div class="article">
+            <div class="article-content">
+                <img src="/images/vino_bianchi.jpg" alt="Vinito">
+                <p>¡¡El verdadero Elixir!!</p>
+                <p>Boca Juniors, un gigante del fútbol mundial, y Bodegas Bianchi, con 95 años de trayectoria en la industria del vino, continúan marcando el camino de la innovación y presentan una colección exclusiva de vinos de alta gama que promete cautivar tanto a los fanáticos del fútbol como a los amantes del vino por igual.</p>
+            </div>
+        </div>
+         <div class="article">
+            <div class="article-content">
+                <img src="/images/basket.jpg" alt="mejor club">
+                <p>Segunda victoria Xeneize en el campeonato nacional de Basket</p>
+                <p>Venció 68-56 a San Lorenzo en la Bombonerita.</p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
+

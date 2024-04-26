@@ -1,0 +1,7 @@
+<form action='@Url.Action("NuevaEntrada")'>
+    <input type="text" placeholder="Precio" name="precio" value="">
+    <input type="text" placeholder="Asiento" name="asiento" value="">
+    <input type="hidden" name="partidoid" value="@ViewBag.idpartido">
+    <input type="text" placeholder="Cantidad de asientos disponibles" name="cantidad" value="">
+    <input type="submit" value="Agregar entrada">
+</form>

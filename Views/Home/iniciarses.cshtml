@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión</title>
+    
+    <style>
+        body {
+            background: linear-gradient(to bottom, #d1ab52, #07358f);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .formContainer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap; /* Permite que los elementos se envuelvan cuando no haya suficiente espacio */
+            gap: 20px; /* Espacio entre los elementos */
+        }
+
+        .formContent {
+            background-color: #d1ab52;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px; /* Ancho fijo de cada formulario */
+        }
+    </style>
+</head>
+<body>
+
+<div class="formContainer">
+    <div class="formContent">
+        <h1>Iniciar Sesión Administrador</h1>
+        <div class="fadeIn first">
+            <img src="/images/usuario.jpg" id="icon" alt="Foto Usuario" class="img-fluid" />
+        </div>
+
+        <form action='@Url.Action("Logueado")' method="post" class="mt-4">
+            <div class="form-group">
+                <input type="text" id="login1" class="fadeIn second form-control" name="mail" placeholder="Username">
+            </div>
+            <div class="form-group">
+                <input type="password" id="password1" class="fadeIn third form-control" name="contraseña" placeholder="Password">
+            </div>
+            <div class="form-group">
+                <input type="submit" class="fadeIn fourth btn btn-primary btn-block" value="Iniciar sesion">
+            </div>
+            <div class="form-group">
+                
+            </div>
+        </form>
+    </div>
+
+    <div class="formContent">
+        <h1>Iniciar Sesión Socio</h1>
+        <div class="fadeIn first">
+            <img src="/images/usuario.jpg" id="icon" alt="Foto Usuario" class="img-fluid" />
+        </div>
+
+        <form action='@Url.Action("Logueado")' method="post" class="mt-4">
+            <div class="form-group">
+                <input type="text" id="login2" class="fadeIn second form-control" name="mail" placeholder="Username">
+            </div>
+            <div class="form-group">
+                <input type="password" id="password2" class="fadeIn third form-control" name="contraseña" placeholder="Password">
+            </div>
+            <div class="form-group">
+                <input type="submit" class="fadeIn fourth btn btn-primary btn-block" value="Iniciar sesion">
+                
+            </div>
+            <div class="form-group">
+                
+            </div>
+        </form>
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Próximos Partidos de Boca Juniors</title>
+        
+    </head>
+    <body>
+        <div class="header">
+                <a href='@Url.Action("Inicio", "Home")'>
+        <img src="/images/boca.jpg" alt="Boca Juniors" class="boca-image">
+            </a>
+            <h1>Próximos Partidos</h1>
+            <div class="nav-links">
+                <a href='@Url.Action("Inicio", "Home")'>Inicio</a>
+                <a href='@Url.Action("Partidos", "Home")'>Partidos</a>
+                <a href='@Url.Action("Entradas", "Home")'>Entradas</a>
+                <a href='@Url.Action("Noticias", "Home")'>Noticias</a>
+            </div>
+
+            <div class="partidos-container">
+    <ul class="partidos-list">
+        @{
+            foreach (Partido partido in ViewBag.partidos){
+                <a href='@Url.Action("EntradasPartido", new{idpartido = @partido.PartidoId})'>Entradas</a>
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ModalEstadio" onclick="ObtenerEstadioPorPartido(@partido.PartidoId)"></button>
+            <li>
+                <div class="partido-info">
+                    <p class="fecha"><strong>Fecha:</strong> @partido.Fechapartido</p>
+                    <img src="@partido.Fotorival" alt="@partido.PartidoId">
+                </div>
+                
+            </li>
+            }   
+        }
+    </ul>
+            </div>
+    </body>
+
+ <div class="modal fade" id="ModalEstadio" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="Estadio">Estadio</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+         <div class="modal-body">
+            <img class="img-fluid" id="NombreEstadio">
+         </div>
+         <div class="modal-footer">
+            <button type="button" class="btn btn-secodary" data-dismiss="modal">Cerrar</button>
+            <button type="button" class="btn btn-primary">Guardar</button>
+         </div>
+    </div>
+  </div>       
+ </div>
+
+</html>
